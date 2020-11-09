@@ -1,1 +1,1 @@
-# usercss
+# Gible's usercss style.
