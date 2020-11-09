@@ -1,3 +1,14 @@
+/* ==UserStyle==
+@name           Gible's Style
+@namespace      github.com/gible
+@version        1.0.0
+@description    My custom styles
+@author         gibl
+@homepageURL    https://github.com/gible/usercss
+@updateURL      https://raw.githubusercontent.com/gible/usercss/main/gible.user.css
+@license        free
+==/UserStyle== */
+
 @-moz-document domain("www.inoreader.com") {
 /* make the most of the space */
 .article_content,
