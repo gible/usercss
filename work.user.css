@@ -19,6 +19,7 @@
 textarea {
     resize:both !important;
 }
+
 }
 
 @-moz-document url-prefix("https://wxgrjdv1/devwiki/") {
@@ -28,7 +29,6 @@ textarea {
     vertical-align:top;
 }
 .wikiEditor-ui-view-preview {
-    //margin-left:calc(50% + 3px);
     vertical-align:top;
     width:49%;
     display:inline-block!important;
