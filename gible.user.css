@@ -3,214 +3,215 @@
 @namespace      github.com/gible
 @version        1.0.0
 @description    My custom styles
-@author         gible
+@author         gibl
 @homepageURL    https://github.com/gible/usercss
 @updateURL      https://raw.githubusercontent.com/gible/usercss/main/gible.user.css
 @license        free
 ==/UserStyle== */
 
 @-moz-document domain("www.inoreader.com") {
-    /* make the most of the space */
-    .article_content,
-    .article_content * {
-        max-width: 100%!important;
-    }
-    /* fix tumblr nest quoting */
-    blockquote {
-        margin: 0 0 1em 0.5em;
-        padding-left: 0.5em;
-        border-left: 2px solid lightgrey;
-    }
-    /* don't show ARAD Headers */
-    div.article[data-suid="51777755"] div.article_title:not(.article_title_expanded_view),
-    div.article[data-suid="52447805"] div.article_title:not(.article_title_expanded_view) {
-        display: none;
-    }
+/* make the most of the space */
+.article_content,
+.article_content * {
+    max-width: 100%!important;
+}
+/* fix tumblr nest quoting */
+blockquote {
+    margin: 0 0 1em 0.5em;
+    padding-left: 0.5em;
+    border-left: 2px solid lightgrey;
+}
+/* don't show ARAD Headers */
+div.article[data-suid="51777755"] div.article_title:not(.article_title_expanded_view),
+div.article[data-suid="52447805"] div.article_title:not(.article_title_expanded_view) {
+    display: none;
+}
 
-    /* two columns*/
-    .article_expanded {
-        width: calc(50% - 60px)!important;
-        display: inline-block;
-        vertical-align: top;
-        margin-left: 7px!important;
-        transform: unset!important;
-        max-height: 1500px;
-        overflow-y: scroll;
-        overflow-x: hidden;
-    }
-    /* scrollbar */
-    .article_expanded::-webkit-scrollbar {
-        width: 2px;
-        height: 2px;
-    }
 
-    .article_expanded::-webkit-scrollbar-track {
-        background: #f1f1f1;
+/* multi columns*/
+    @media (min-width: 1500px) {
+        .article_card.article_expanded {
+            width: calc(50% - 60px)!important;
+            display: inline-block;
+            vertical-align: top;
+            margin-left: 7px!important;
+            transform: unset!important;
+            max-height: 1500px;
+            overflow-y: scroll;
+            overflow-x: hidden;
+        }
     }
+/* three columns*/
+    @media (min-width: 2000px) {
+        .article_card.article_expanded {
+            width: calc(33% - 60px)!important;
+        }
+    }
+/* scrollbar */
+.article_expanded::-webkit-scrollbar {
+    width: 2px;
+    height: 2px;
+}
 
-    .article_expanded::-webkit-scrollbar-thumb {
-        background: #888;
-        border-radius: 2px;
-    }
+.article_expanded::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
 
-    .article_expanded::-webkit-scrollbar-thumb:hover {
-        background: #555;
-    }
-    .article_footer_placeholder_middle_sticky {
-        position: sticky;
-        top: -30px!important;
-    }
-    .article_full_contents,
-    .article_title,
-    .article_sub_title,
-    .article_footer {
-        width: unset;
-        padding-left: 10px;
-        padding-right: 10px;
-    }
-    a#reader_pane {
-        display: grid;
-    }
+.article_expanded::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 2px;
+}
 
-    /* Hide ads*/
-    .block_article_ad,
-    .ad_title,
-    .avs_iframe,
-    #sinner_container,
-    #all_gad_6125 {
-        display: none !important;
-    }
+.article_expanded::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+.article_footer_placeholder_middle_sticky {
+    position: sticky;
+    top: -30px!important;
+}
+.article_full_contents,
+.article_title,
+.article_sub_title,
+.article_footer {
+    width: unset;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+a#reader_pane {
+    display: grid;
+}
 
-    .reader_pane_sinner {
-        padding-right: 0 !important;
-    }
-    #nagidmodal.inno_dialog_modal_overlay,
-    #nagidscroll.inno_dialog_scroll_overlay{
-        display: none;
-    }
-/*
-    .inno_dialog_modal_overlay:not([id^=article_dialog]),
-    .inno_dialog_scroll_overlay:not([id^=article_dialog]),
-    .inno_dialog_modal_overlay:not([id^=xconfirm_modal_overlay]),
-    .inno_dialog_scroll_overlay:not([id^=xconfirm_scroll_overlay]){
-        display: none;
-    }
-*/
+/* Hide ads
+.block_article_ad,
+.ad_title,
+.avs_iframe,
+#sinner_container,
+#all_gad_6125 {
+    display: none !important;
+}
+
+.reader_pane_sinner {
+    padding-right: 0 !important;
+}
+.inno_dialog_modal_overlay:not([id^=article_dialog]),
+.inno_dialog_scroll_overlay:not([id^=article_dialog]) {
+    display: none;
+}*/
 }
 
 @-moz-document domain("web.telegram.org") {
-    div.page_wrap {
-        max-width: 1050px;
-    }
+div.page_wrap {
+    max-width: 1050px;
+}
 }
 
 @-moz-document regexp("https?://(www\\.)?reddit\\.com/?.*") {
-    body {
-        overflow-x: hidden;
-    }
-    .side {
-        position: absolute;
-        right: -280px;
-        z-index: 10;
-    }
-    .side:hover {
-        right: 0;
-    }
-    .content {
-        margin-right: 30px;
-    }
-    .promoted {
-        display: none;
-    }
+body {
+    overflow-x: hidden;
+}
+.side {
+    position: absolute;
+    right: -280px;
+    z-index: 10;
+}
+.side:hover {
+    right: 0;
+}
+.content {
+    margin-right: 30px;
+}
+.promoted {
+    display: none;
+}
 }
 
 @-moz-document url-prefix("https://www.linkedin.com/feed/") {
-    @media (min-width: 120000px) {
-        .neptune-grid {
-            width: 100%;
-            padding: 0;
-        }
-        .left-rail,
-        .right-rail {
-            position: absolute;
-            z-index: 10;
-            top: 0;
-            float: unset!important;
-        }
-        .left-rail {
-            left: 0;
-        }
-        .left-rail:hover {
-            left: 0;
-        }
-        .right-rail {
-            right: 0;
-        }
-        .right-rail:hover {
-            right: 0;
-        }
+@media (min-width: 120000px) {
+    .neptune-grid {
+        width: 100%;
+        padding: 0;
     }
+    .left-rail,
+    .right-rail {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        float: unset!important;
+    }
+    .left-rail {
+        left: 0;
+    }
+    .left-rail:hover {
+        left: 0;
+    }
+    .right-rail {
+        right: 0;
+    }
+    .right-rail:hover {
+        right: 0;
+    }
+}
 }
 
 @-moz-document domain("www.neighbourly.co.nz") {
-    @media (min-width: 1200px) {
-        .container {
-            max-width: 100%;
-        }
-        .sidebar.col-md-3 {
-            position: absolute;
-            z-index: 10;
-            border: 1px solid lightgrey;
-            border-radius: 5px;
-            background-color: #F7F9F8;
-        }
-        .narrow ul.nav-pills {
-            margin: 0 -15px;
-        }
-        .sidebar.narrow {
-            left: -215px;
-        }
-        .sidebar.narrow:hover {
-            left: 0;
-        }
-        .sidebar.display-ad-col {
-            right: -290px;
-        }
-        .sidebar.display-ad-col:hover {
-            right: 0;
-        }
-        .col-md-6 {
-            width: calc(100% - 80px);
-            margin: 40px;
-        }
-        .scrolling-content-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(515px, 1fr));
-            grid-gap: 10px;
-            margin-right: 15px;
-            clear: left;
-        }
+@media (min-width: 1200px) {
+    .container {
+        max-width: 100%;
     }
+    .sidebar.col-md-3 {
+        position: absolute;
+        z-index: 10;
+        border: 1px solid lightgrey;
+        border-radius: 5px;
+        background-color: #F7F9F8;
+    }
+    .narrow ul.nav-pills {
+        margin: 0 -15px;
+    }
+    .sidebar.narrow {
+        left: -215px;
+    }
+    .sidebar.narrow:hover {
+        left: 0;
+    }
+    .sidebar.display-ad-col {
+        right: -290px;
+    }
+    .sidebar.display-ad-col:hover {
+        right: 0;
+    }
+    .col-md-6 {
+        width: calc(100% - 80px);
+        margin: 40px;
+    }
+    .scrolling-content-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(515px, 1fr));
+        grid-gap: 10px;
+        margin-right: 15px;
+        clear: left;
+    }
+}
 }
 
 @-moz-document domain("nexusmods.com") {
-    .areplacer {
-        width: 100%;
-        display: none;
-    }
+.areplacer {
+    width: 100%;
+    display: none;
+}
 }
 
 @-moz-document domain("userstyles.org") {
-    .navigation {
-        padding-left: 0;
-        width: 35px;
-        overflow-x: hidden;
-        white-space: nowrap;
-    }
-    .navigation:hover {
-        padding-left: 17px;
-        width: 220px;
-        overflow-x: unset;
-        white-space: unset;
-    }
+.navigation {
+    padding-left: 0;
+    width: 35px;
+    overflow-x: hidden;
+    white-space: nowrap;
+}
+.navigation:hover {
+    padding-left: 17px;
+    width: 220px;
+    overflow-x: unset;
+    white-space: unset;
+}
 }
