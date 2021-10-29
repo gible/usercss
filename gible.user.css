@@ -1,13 +1,34 @@
 /* ==UserStyle==
 @name           Gible's Style
 @namespace      github.com/gible
-@version        1.0.2
+@version        1.0.3
 @description    My custom styles
 @author         gibl
 @homepageURL    https://github.com/gible/usercss
 @updateURL      https://raw.githubusercontent.com/gible/usercss/main/gible.user.css
 @license        free
 ==/UserStyle== */
+
+@-moz-document domain("atlassian.net") {
+    .css-160xfzw {margin:2px 0!important}
+    .css-160xfzw *{margin:0!important}
+    .cZrVRO {height:26px!important;}
+    .jfxAAP{
+        height:24px!important;
+        margin:0!important;
+    }
+    .dxZyme {
+        top:21px!important;
+        height:28px!important;
+    }
+    .jfxAAP,.OILRR,.kKpCJT{display:none}
+    .fGBOpF{padding:6px!important;}
+    .fGBOpF .puw1ku-0 {margin-bottom: 0px;}
+    .izguGI {padding: 0px 10px;}
+    .dMZIfa {width:10px;}
+    .kSAziZ {display:none}
+    .ixpnJG {padding:0}
+}
 
 @-moz-document domain("wikipedia.org") {
     #frb-inline,
