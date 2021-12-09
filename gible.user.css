@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Gible's Style
 @namespace      github.com/gible
-@version        1.0.7
+@version        1.0.8
 @description    My custom styles
 @author         gible
 @homepageURL    https://github.com/gible/usercss
@@ -82,6 +82,10 @@
         width: unset;
         padding-left: 10px;
         padding-right: 10px;
+    }
+    div.article_magazine {
+        margin: unset;
+        display: inline-block;
     }
     a#reader_pane {
         display: grid;
