@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Gible's Style
 @namespace      github.com/gible
-@version        1.0.11
+@version        1.0.12
 @description    My custom styles
 @author         gible
 @homepageURL    https://github.com/gible/usercss
@@ -182,6 +182,13 @@
     }
 }
 
+@-moz-document regexp("https?://www.neighbourly.co.nz/message/view/.*") {
+.scrolling-content-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(515px, 1fr));
+        grid-gap: 10px;
+    }
+}
 @-moz-document domain("www.neighbourly.co.nz") {
     @media (min-width: 1200px) {
         .container {
