@@ -51,6 +51,8 @@
             overflow-y: scroll;
             overflow-x: hidden;
         }
+        .articles_feed_group_heading,
+        .articles_feed_group_footer {display:none!important}
     }
     /* three columns*/
     @media (min-width: 2000px) {
