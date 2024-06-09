@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Gible's Style
 @namespace      github.com/gible
-@version        1.0.19
+@version        1.0.20
 @description    My custom styles
 @author         gible
 @homepageURL    https://github.com/gible/usercss
@@ -29,33 +29,9 @@ textarea {
     }
 }
 
-@-moz-document domain("www.inoreader.comx") {
-    /* make the most of the space */
-    .article_content,
-    .article_content * {
-        max-width: 100%!important;
-    }
-    /*Hide feed headings*/
-    .articles_feed_group_heading,
-    .articles_feed_group_footer         {display:none!important}
-    #reader_pane.reader_pane_view_style_1 {
-        width:100%;
-        bottom:0;
-        aheight:unset!important;
-        columns:500px;
-    }
-    #reader_pane.reader_pane_view_style_1 > * {
-        -webkit-column-break-inside: avoid;
-    }
-    .trending_heading_wrapper,
-    .reader_pane_view_style_1 .trending_heading_wrapper {
-        width:auto;
-        margin-left:unset;
-        transform:unset;
-        padding:15px;
-    }
-}
+
 @-moz-document domain("www.inoreader.com") {
+    /* Inoreader fixes */
     /* make the most of the space */
     .article_content,
     .article_content * {
@@ -67,17 +43,42 @@ textarea {
         padding-left: 0.5em;
         border-left: 2px solid lightgrey;
     }
-    /*Only show Youtube video */
+    /* only show Youtube video */
     div.article_expanded[data-tags*="11356958"] {
         height:480px!important;
     }
     /* don't show ARAD Headers */
     div.article[data-suid="51777755"] div.article_title:not(.article_title_expanded_view),
-    div.article[data-suid="52447805"] div.article_title:not(.article_title_expanded_view) {
-        display: none;
+    div.article[data-suid="52447805"] div.article_title:not(.article_title_expanded_view),
+    /* hide feed headings */
+    .articles_feed_group_heading,
+    .articles_feed_group_footer {
+        display:none!important;
     }
-
-
+    div.article_magazine {
+        margin: unset;
+    }
+}
+@-moz-document domain("www.inoreader.comx") {
+    /* grid masonry*/
+    #reader_pane.reader_pane_view_style_1,
+    #reader_pane.reader_pane_view_style_4 {
+        display: grid;
+        gap: 10px;
+        grid-template-columns: repeat(auto-fill, minmax(600px, 1fr));
+        /*grid-template-rows: repeat(auto-fill, minmax(1fr,1500px));*/
+        grid-template-rows: masonry;    
+    }
+    #new_articles_overlay {
+        grid-column: 1/-1;
+    }
+    div.article_card.article_expanded {
+        height:auto;
+    }
+    /**/
+    
+}
+@-moz-document domain("www.inoreader.com") {
     /* multi columns*/
     @media (min-width: 1500px) {
         .article_card.article_expanded {
@@ -90,8 +91,6 @@ textarea {
             overflow-y: scroll;
             overflow-x: hidden;
         }
-        .articles_feed_group_heading,
-        .articles_feed_group_footer {display:none!important}
     }
     /* three columns*/
     @media (min-width: 2000px) {
@@ -139,11 +138,7 @@ textarea {
         padding-right: 10px;
     }
     div.article_magazine {
-        margin: unset;
         display: inline-block;
-    }
-    a#reader_pane {
-        display: grid;
     }
 
     /* Hide ads
@@ -176,22 +171,48 @@ textarea {
     }
 }
 @-moz-document regexp("https?://(www\\.)?reddit\\.com/?.*") {
-    body {
-        overflow-x: hidden;
+    /* Reddit Multi Column fixes */
+    .subgrid-container {
+        max-width:unset;
     }
-    .side {
-        position: absolute;
-        right: -280px;
-        z-index: 10;
+    article+hr {display:none;}
+    div.grid-container{
+        display:block;
     }
-    .side:hover {
-        right: 0;
+    #user-drawer-content,
+    #mini-inbox-tooltip > div{
+        position:fixed;
+        z-index:3;
+        top:60px;
+        right:0;
+        background:rgb(14, 17, 19);
     }
-    .content {
-        margin-right: 30px;
+    #right-sidebar-container {
+        position:fixed;
+        z-index:2;
+        top:60px;
+        right:-300px;
+        display:block!important;
     }
-    .promoted {
-        display: none;
+    #right-sidebar-container:hover {
+        right:00px;
+    }
+    #left-sidebar-container {
+        position:fixed;
+        z-index:2;
+        top:60px;
+        left:-330px;
+        display:block!important;
+    }
+    #left-sidebar-container:hover {
+        left:00px;
+    }
+    /* why don't these work?? */
+    #shreddit-media-lightbox > span[slot="prevButton"]{
+        margin-left:40px;
+    }
+    span[slot="nextButton"]{
+        margin-right:40px;
     }
 }
 
