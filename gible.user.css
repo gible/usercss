@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Gible's Style
 @namespace      github.com/gible
-@version        1.0.23
+@version        1.0.24
 @description    My custom styles
 @author         gible
 @homepageURL    https://github.com/gible/usercss
@@ -194,12 +194,14 @@ textarea {
     #right-sidebar-container {
         position:fixed;
         z-index:2;
-        top:55px;
+        top:30px;
         right:-290px;
         display:block!important;
+        max-height:calc(100vh - 1px);
+        overflow-y:scroll;
     }
     #right-sidebar-container:hover {
-        right:00px;
+        right:0;
     }
     #left-sidebar-container {
         position:fixed;
@@ -225,6 +227,30 @@ textarea {
     shreddit-post {
         padding-left:0 !important;
         padding-right:0 !important;
+    }
+}
+@-moz-document regexp("https?://(www\\.)?reddit\\.com/r/.*") {
+    #right-sidebar-container {
+        position:fixed;
+        top:65px;
+    }
+}
+@-moz-document regexp("https?://(www\\.)?reddit\\.com/\w+/comments/.*") {
+    #right-sidebar-container {
+        position:relative;
+        top:10px;
+    }
+    #right-sidebar-container:hover {
+        right:-20px;
+    }
+}
+@-moz-document regexp("https?://(www\\.)?sreddit\\.com/user/?.*") {
+    #right-sidebar-container {
+        position:fixed;
+        top:55px;
+    }
+    #right-sidebar-container:hover {
+        right:0;
     }
 }
 
