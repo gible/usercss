@@ -12,16 +12,13 @@
 textarea {
     resize:both!important;
 }
+
 @-moz-document regexp("https://web.archive.org/web.*addergoole.*") {
     i,b,s,u {
         color:red;
     }
 }
-@-moz-document domain("satisfactory.fandom.com") {
-    .resizable-container {
-        max-width: 1500px;
-    }
-}
+
 @-moz-document domain("wikipedia.org") {
     #frb-inline,
     #frb-nag {
@@ -66,9 +63,8 @@ textarea {
     #reader_pane.reader_pane_view_style_4 {
         display: grid;
         gap: 10px;
-        grid-template-columns: repeat(auto-fill, minmax(600px, 1fr));
-        /*grid-template-rows: repeat(auto-fill, minmax(1fr,1500px));*/
-        grid-template-rows: masonry;    
+        grid-template-rows: repeat(auto-fill, minmax(1fr,1500px));
+        /*grid-template-rows: masonry;*/  
     }
     #new_articles_overlay {
         grid-column: 1/-1;
@@ -142,22 +138,22 @@ textarea {
         display: inline-block;
     }
 
-    /* Hide ads
-.block_article_ad,
-.ad_title,
-.avs_iframe,
-#sinner_container,
-#all_gad_6125 {
-    display: none !important;
-}
+    /* Hide ads */
+    .block_article_ad,
+    .ad_title,
+    .avs_iframe,
+    #sinner_container,
+    #all_gad_6125 {
+        display: none !important;
+    }
 
-.reader_pane_sinner {
-    padding-right: 0 !important;
-}
-.inno_dialog_modal_overlay:not([id^=article_dialog]),
-.inno_dialog_scroll_overlay:not([id^=article_dialog]) {
-    display: none;
-}*/
+    .reader_pane_sinner {
+        padding-right: 0 !important;
+    }
+    .inno_dialog_modal_overlay:not([id^=article_dialog]),
+    .inno_dialog_scroll_overlay:not([id^=article_dialog]) {
+        display: none;
+    }*/
 }
 
 @-moz-document domain("web.telegram.org") {
@@ -392,3 +388,15 @@ textarea {
         white-space: unset;
     }
 }
+@-moz-document domain("youtubetotranscript.com") {
+    #ai-section {
+        display: none;
+    }
+    .md\:w-1\/2 {
+        width:100%
+    }
+    .font-semibold {
+        font-weight: unset;
+    }
+}
+
