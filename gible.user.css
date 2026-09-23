@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Gible's Style
 @namespace      github.com/gible
-@version        1.0.24
+@version        1.0.25
 @description    My custom styles
 @author         gible
 @homepageURL    https://github.com/gible/usercss
@@ -24,136 +24,6 @@ textarea {
     #frb-nag {
         display: none!important;
     }
-}
-
-
-@-moz-document domain("www.inoreader.com") {
-    /* Inoreader fixes */
-    /* make the most of the space */
-    .article_content,
-    .article_content * {
-        max-width: 100%!important;
-    }
-    /* fix tumblr nest quoting */
-    blockquote {
-        margin: 0 0 1em 0.5em;
-        padding-left: 0.5em;
-        border-left: 2px solid lightgrey;
-    }
-    /* only show Youtube video */
-    div.article_expanded[data-tags*="11356958"] {
-        height:480px!important;
-    }
-    /* don't show ARAD Headers */
-    div.article[data-suid="51777755"] div.article_title:not(.article_title_expanded_view),
-    div.article[data-suid="52447805"] div.article_title:not(.article_title_expanded_view),
-    /* hide feed headings */
-    div#reader_pane > h5,
-    .articles_feed_group_heading,
-    .articles_feed_group_footer {
-        display:none!important;
-    }
-    div.article_magazine {
-        margin: unset;
-    }
-}
-@-moz-document domain("www.inoreader.comx") {
-    /* grid masonry*/
-    #reader_pane.reader_pane_view_style_1,
-    #reader_pane.reader_pane_view_style_4 {
-        display: grid;
-        gap: 10px;
-        grid-template-rows: repeat(auto-fill, minmax(1fr,1500px));
-        /*grid-template-rows: masonry;*/  
-    }
-    #new_articles_overlay {
-        grid-column: 1/-1;
-    }
-    div.article_card.article_expanded {
-        height:auto;
-    }
-    /**/
-    
-}
-@-moz-document domain("www.inoreader.com") {
-    /* multi columns*/
-    @media (min-width: 1500px) {
-        .article_card.article_expanded {
-            width: calc(50% - 5px)!important;
-            display: inline-block;
-            vertical-align: top;
-            margin-left:0!important;
-            transform: unset!important;
-            max-height: 1200px;
-            overflow-y: scroll;
-            overflow-x: hidden;
-        }
-    }
-    /* three columns*/
-    @media (min-width: 2000px) {
-        .article_card.article_expanded {
-            width: calc(31%)!important;
-        }
-    }
-    /* scrollbar */
-    .article_expanded::-webkit-scrollbar {
-        width: 2px;
-        height: 2px;
-    }
-    .article_expanded:hover::-webkit-scrollbar {
-        width: 8px;
-        height: 6px;
-    }
-
-    .article_expanded::-webkit-scrollbar-track {
-        background: #f1f1f1;
-    }
-    .article_expanded::-webkit-scrollbar-track:hover {
-        width: 8px;
-        height: 6px;
-        background: #f1f1f1;
-    }
-
-    .article_expanded::-webkit-scrollbar-thumb {
-        background: #888;
-        border-radius: 2px;
-    }
-
-    .article_expanded::-webkit-scrollbar-thumb:hover {
-        background: #555;
-    }
-    .article_footer_placeholder_middle_sticky {
-        position: sticky;
-        top: -30px!important;
-    }
-    .article_full_contents,
-    .article_title,
-    .article_sub_title,
-    .article_footer {
-        width: unset;
-        padding-left: 10px;
-        padding-right: 10px;
-    }
-    div.article_magazine {
-        display: inline-block;
-    }
-
-    /* Hide ads */
-    .block_article_ad,
-    .ad_title,
-    .avs_iframe,
-    #sinner_container,
-    #all_gad_6125 {
-        display: none !important;
-    }
-
-    .reader_pane_sinner {
-        padding-right: 0 !important;
-    }
-    .inno_dialog_modal_overlay:not([id^=article_dialog]),
-    .inno_dialog_scroll_overlay:not([id^=article_dialog]) {
-        display: none;
-    }*/
 }
 
 @-moz-document domain("web.telegram.org") {
@@ -389,14 +259,30 @@ textarea {
     }
 }
 @-moz-document domain("youtubetotranscript.com") {
-    #ai-section {
-        display: none;
+    .bg-secondary, #promo-banner-slot, #ai-section, #cr-topbar {
+        display: none!important;
     }
     .md\:w-1\/2 {
         width:100%
     }
     .font-semibold {
         font-weight: unset;
+    }
+    .hero-content {
+        padding:0;
+    }
+    #video, iframe {
+        max-height:unset;
+        aheight:655px;
+        position:static;
+    }
+    /* dark mode */
+    .hover\:bg-base-200:hover, .bg-primary, .bg-gray-50, .bg-base-100 {
+        background-color:#222;
+        border:unset;
+    }
+    .btn-ghost, .card-title, .text-base-content, .text-primary-content {
+        color:#ccc;
     }
 }
 

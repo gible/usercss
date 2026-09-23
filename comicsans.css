@@ -1,17 +1,17 @@
 /* ==UserStyle==
 @name           Comic Sans Everywhere
 @namespace      github.com/gible
-@version        1.0.1
+@version        1.0.2
 @description    My custom styles
 @author         gible
 @homepageURL    https://github.com/gible/usercss
 @updateURL      https://raw.githubusercontent.com/gible/usercss/main/comicsans.css
 @license        free
 ==/UserStyle== */
-* {
+*:not(*:class-begins-with("hljs")) {
     font-family: "Comic Sans MS", "Comic Neue", "Coming Soon", casual, graffiti, cursive, sans-serif;
 }
-@-moz-document regexp("https?://www.(reddit|inoreader).com/.*") {
+@-moz-document regexp("https?://www.(reddit|inoreader|nytimes).com/.*") {
     * {
         font-family: "Comic Sans MS", "Comic Neue", "Coming Soon", casual, graffiti, cursive, sans-serif !important;
     }
