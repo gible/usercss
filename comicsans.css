@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Comic Sans Everywhere
 @namespace      github.com/gible
-@version        1.0.2
+@version        1.0.3
 @description    My custom styles
 @author         gible
 @homepageURL    https://github.com/gible/usercss
@@ -11,8 +11,9 @@
 *:not(*:class-begins-with("hljs")) {
     font-family: "Comic Sans MS", "Comic Neue", "Coming Soon", casual, graffiti, cursive, sans-serif;
 }
-@-moz-document regexp("https?://www.(reddit|inoreader|nytimes).com/.*") {
+@-moz-document regexp("https?://(www.(?!google.com/(maps|mail))|storiesonline.net)/?.*") {
     * {
         font-family: "Comic Sans MS", "Comic Neue", "Coming Soon", casual, graffiti, cursive, sans-serif !important;
     }
 }
+
