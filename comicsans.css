@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Comic Sans Everywhere
 @namespace      github.com/gible
-@version        1.0.6
+@version        1.0.7
 @description    My custom styles
 @author         gible
 @homepageURL    https://github.com/gible/usercss
@@ -26,14 +26,7 @@
   * {font-family: "Comic Sans MS","wp-web-icons" !important}
 }
 @-moz-document domain("www.royalroad.com"){
-  @font-face {
-    font-family: Barlow;
-    font-style: italic;
-    font-weight: 100;
-    font-display: swap;
-    src: url(https://fonts.gstatic.com/s/barlow/v13/7cHtv4kjgoGqM7E_CfNY8HIJmAci.woff2) format('woff2');
- }
-  * {font-family: "Comic Sans MS","Font Awesome 5 Pro", Barlow !important}
+  * {font-family: "Comic Sans MS","Font Awesome 5 Pro","Font Awesome 6 Pro" !important}
 }
 @-moz-document regexp("https://www.google.com(.au)?/search.*"), url-prefix("https://drive.google.com"), url-prefix("https://www.youtube.com"){
   * {font-family: "Comic Sans MS","Roboto" !important}
