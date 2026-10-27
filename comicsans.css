@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Comic Sans Everywhere
 @namespace      github.com/gible
-@version        1.0.7
+@version        1.0.8
 @description    My custom styles
 @author         gible
 @homepageURL    https://github.com/gible/usercss
@@ -13,21 +13,6 @@
   font-display: swap;
   src: url("https://www.gible.net/fonts/comici.ttf");
 }
-
-*:not(*:class-begins-with("hljs")) {
-  font-family: "Comic Sans MS";
-}
-@-moz-document regexp("https?://(www.(?!gible.net|google.com)|storiesonline.net)/?.*") {
-  * {
-    font-family: "Comic Sans MS" !important;
-  }
-}
-@-moz-document domain("www.wattpad.com"){
-  * {font-family: "Comic Sans MS","wp-web-icons" !important}
-}
-@-moz-document domain("www.royalroad.com"){
-  * {font-family: "Comic Sans MS","Font Awesome 5 Pro","Font Awesome 6 Pro" !important}
-}
-@-moz-document regexp("https://www.google.com(.au)?/search.*"), url-prefix("https://drive.google.com"), url-prefix("https://www.youtube.com"){
+@-moz-document regexp("https://www.google.com(.au)?/search.*"), url-prefix("https://www.youtube.com"){
   * {font-family: "Comic Sans MS","Roboto" !important}
 }
